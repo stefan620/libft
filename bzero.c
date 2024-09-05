@@ -14,19 +14,21 @@
 #include <stdio.h>
 #include <string.h>
 
-void	b_zero(void *str, size_t n)
+void    b_zero(void *str, size_t n)
 {
-	unsigned char *ptr = str;
-	
-	while(n-- > 0)
-	{
-		*ptr++ = '\0';
-	}
-	
+    unsigned char *ptr = (unsigned char *)str;
+    
+    while(n-- > 0)
+    {
+        *ptr++ = '0';
+    }
+    
 }
 
 int main(void)
 {
-	int  str[50];
-	printf("%s", (char *)mem_set(str, 4));
+    char str[50] = "sdadasd";
+    b_zero(str, 5);
+    puts(str);
+   
 }
