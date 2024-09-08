@@ -9,26 +9,25 @@
 /*   Updated: 2024/09/03 14:35:09 by silic            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
-
-void    b_zero(void *str, size_t n)
+void    ft_bzero(void *str, size_t n)
 {
-    unsigned char *ptr = (unsigned char *)str;
+    unsigned char   *ptr;
+    ptr = (unsigned char *)str;
     
     while(n-- > 0)
     {
         *ptr++ = '0';
     }
-    
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
 {
     char str[50] = "sdadasd";
-    b_zero(str, 5);
+    ft_bzero(str, 5);
     puts(str);
    
 }
+*/

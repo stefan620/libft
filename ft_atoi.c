@@ -10,35 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-		
-	int a;	
-	
-	
-	
+	int			a;
+	const char	*min;
+
 	a = 0;
-	
 	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
-	 
-	const char *min = str;
+	min = str;
 	if (*min == '-' || *min == '+')
 		str++;
-	while (*str!= '\0' && (*str >= '0' && *str <= '9'))
+	while (*str != '\0' && (*str >= '0' && *str <= '9'))
 	{
-		a = a * 10 + (*str - '0');	
+		a = a * 10 + (*str - '0');
 		str++;
 	}
 	if (*min == '-')
 		a = a * -1;
-	return(a);
+	return (a);
 }
-
+/*
 #include <stdlib.h>
+#include <stdio.h>
+
 
 int main(void)
 {
@@ -47,3 +42,4 @@ int main(void)
 	printf("%d \n", ft_atoi(a));
 	printf("%d \n", atoi(a));
 }
+*/
