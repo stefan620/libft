@@ -13,19 +13,40 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
-char	*ft_strnstr(const char *big,	const char *little, size_t len)
+
+char    *ft_strnstr(const char *big,    const char *little, size_t len)
 {
-	if (ft_strlen(little) == 0)
-		return(big);
+    int i;
+    int j;
+    char *s = big;
 
+    i = 0;
+    i = 0;
+    /*if (ft_strlen(little) == 0)
+        return(big);*/
+    while(big[i]  && len != 0)
+    {
+        j = 0;
+        while (big[i] == little[j] || little[i])
+        {
+           if(little[j] == '\0')
+                return(&big[i-j]);
+            j++;
+            i++;
+            len--;
+           
+        }
+        i++;
+        len--;
+    }
+    return(NULL);
 
-	return (NULL); 
 }
 int main(void)
 {
-	char a[5] = "abcde";
-	char b[2] = "";
-	char *c = ft_strnstr(a, b, 1);
-	printf("%s", c);
-	return(0); 
+    char a[6] = "abcde";
+    char b[3] = "cd";
+    char *c = ft_strnstr(a, b, 6);
+    printf("%s", c);
+    return(0); 
 }
