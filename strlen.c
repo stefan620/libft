@@ -23,7 +23,6 @@ size_t	str_len(size_t n, char *str)
 	}
 	return (n);
 }
-
 int main(void)
 {
 	

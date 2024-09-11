@@ -14,35 +14,23 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
-void	*mem_cpy(void *dest, const void *src, size_t n);
 
-void	*mem_move(void *dest, const void *src, size_t n)
-{
-	unsigned char *buff;
-	unsigned char *dptr = dest;
-	const unsigned char *sptr = src;
-	size_t m;
-	m = n;
-	buff = mem_cpy(buff, src, n);
-	
-	while (m-- > 0)
-	{
-		*dptr++ = *buff++; 
-	}
-	return(dest);
-}
-
-void	*mem_cpy(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char *dptr = dest;
 	const unsigned char *sptr = src;
-	
-	while (n-- > 0)
-	{
-		*dptr++ = *sptr++;
-	}
-	return(dest);
+
+	if (!dest && !src)
+		return(dest);
+	  if (src < dest)
+        while (n--)
+            dptr[n] = sptr[n];
+    else 
+        while (n--)
+            *dptr++ = *sptr++;
+    return (dest);
 }
+/*
 int main (void)
 {
 	char src[100] = "Learningisfun";
@@ -50,3 +38,4 @@ int main (void)
 	mem_move(dest + 8, src, 10);
 	puts(dest);
 }
+*/

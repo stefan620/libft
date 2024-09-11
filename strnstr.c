@@ -13,15 +13,19 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
-/*char * strnstr(const char *big,	const char *little, size_t len)
+char	*ft_strnstr(const char *big,	const char *little, size_t len)
 {
-	
-}*/
+	if (ft_strlen(little) == 0)
+		return(big);
+
+
+	return (NULL); 
+}
 int main(void)
 {
 	char a[5] = "abcde";
-	char b[2] = "a";
-	char *c = strnstr(a, b, 1);
+	char b[2] = "";
+	char *c = ft_strnstr(a, b, 1);
 	printf("%s", c);
 	return(0); 
 }
