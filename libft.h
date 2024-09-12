@@ -38,6 +38,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	*ft_memmove(void *dest, const void *src, size_t n);
-
+char    *ft_itoa(int n);
+int	ft_strncmp(const char *str1, const char *str2, size_t n);
+void	*ft_memchr(const void *str, int c, size_t n);
+void	ft_putnbr_fd(int n, int fd);
+char    *ft_strnstr(const char *big, const char *little, size_t len);	
 #endif
 
