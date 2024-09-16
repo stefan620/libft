@@ -12,9 +12,11 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int		i;
-	char	*ptr;
+	int				i;
+	char			*ptr;
+	unsigned char	*ptr1;
 
+	ptr1 = (unsigned char *)&c;
 	ptr = (char *)str;
 	i = 0;
 	while (*str != '\0')
@@ -24,17 +26,15 @@ char	*ft_strrchr(const char *str, int c)
 	}
 	while (i > 0)
 	{
-		if (*str == c)
+		if (*str == *ptr1)
 			return ((char *) str);
 		i--;
 		str--;
 	}
-	if (*ptr == c)
+	if (*ptr == *ptr1)
 		return (ptr);
-	if (c == 0)
+	if (*ptr1 == 0)
 		return (ptr);
-	if (c <= 32 || c >= 126)
-		return ((char *)str);
 	return (0);
 }
 /*

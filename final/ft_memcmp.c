@@ -9,16 +9,22 @@
 /*   Updated: 2024/09/05 15:54:06 by silic            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
 int	ft_memcmp(const char *str1, const char *str2, size_t n)
 {
-	while (str1 && n > 0)
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
+	size_t			i;
+
+	ptr1 = (unsigned char *)str1;
+	ptr2 = (unsigned char *)str2;
+	i = 0;
+	while (i < n)
 	{
-		if (*str1 != *str2)
-			return (*str2 - *str1);
-		str1++;
-		str2++;
-		n--;
+		if (ptr1[i] != ptr2[i])
+			return (ptr1[i] - ptr2[i]);
+		i++;
 	}
 	return (0);
 }

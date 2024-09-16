@@ -9,6 +9,7 @@
 /*   Updated: 2024/09/06 18:48:41 by silic            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
@@ -17,13 +18,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	j = 0;
 	i = 0;
-	if (!src || !dst)
-		return (0);
 	while (src[j])
 		j++;
 	if (size != 0)
 	{
-		while (src[i] && i < (size -1))
+		while (src[i] && i < (size - 1))
 		{
 			dst[i] = src[i];
 			i++;
