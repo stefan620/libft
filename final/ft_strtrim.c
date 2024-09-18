@@ -10,87 +10,69 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
+#include "libft.h"
 
 static int	beggining(char const *s1, char const *set);
 static int	end(char const *s1, char const *set);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		a;
-	int		b;
-	char	*c;
 	char	*ret;
+	int		start;
+	int		end1;
 	int		i;
-	
-	if (!s1 || !set)
-		return (NULL);
-	set = set;
+
 	i = 0;
-	a = beggining(s1, set);
-	b = end(s1, set);
-	c = (char *)malloc((20) * sizeof(char));
-	if (!c)
-		return (NULL);
-	ret = c;
-	while (a != b)
+	start = beggining(s1, set);
+	end1 = end(s1, set);
+
+	if (!s1 || start == (int )ft_strlen(s1))
 	{
-		c[i] = s1[a];
-		a++;
-		i++;
+		ret = ft_strdup("");
+		return(ret);
 	}
-	c[i] = '\0';
-	return ((char *)ret);
+	else if (!set)
+	{
+		ret = ft_strdup(s1);
+		return (ret);
+		
+	}
+	else
+	{	
+		ret = (char *)malloc((end1 - start + 1) * sizeof(char));
+	}
+	if (ret == NULL)
+		return (NULL);
+	while (end1 != start && s1 && set)
+	{
+		ret[i] = s1[start];
+		i++;
+		start++;;
+	}
+	ret[i] = '\0';
+	return (ret);
 }
 
 static int	beggining(char const *s1, char const *set)
 {
-	int				i;
-	int				j;
-
-	i = 0;
-	j = 0;
-	while (*s1)
-	{
-		while (s1[j] == set[i])
-		{
-			i = 0;
-			j++;
-		}
-		i++;
-		if (set[i] == '\0')
-			return (j);
-		s1++;
-	}
-	return (0);
+	int start;
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	return(start);
 }
 
 static int	end(char const *s1, char const *set)
 {
-	int				i;
-	int				j;
-
-	i = 0;
-	j = 0;
-	while (s1[i])
-		i++;
-	while (i != 0)
-	{
-		while (s1[i] == set[j])
-		{
-			j = 0;
-			j++;
-		}
-		i--;
-		
-		if (set[j] == '\0')
-			return (i - 1);
-		i--;
-	}
-	return (0);
+	int	end;
+	end = ft_strlen(s1);
+	while (end != 0 && ft_strchr(set, s1[end - 1]))
+		end--;
+	return (end);
 }
-
+/*
 #include <stdio.h>
 int main(void)
 {
-	printf("%s",ft_strtrim("xxytripouilleyyx", "xyx"));
-}
+	printf("%s",ft_strtrim("", ""));
+
+}*/
