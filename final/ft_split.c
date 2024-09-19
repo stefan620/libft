@@ -32,6 +32,16 @@ static int	counter(char const *s, char c)
 	}
 	return (i);
 }
+static void free_all(char **arr)
+{
+	int	i;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+}
 
 char	**ft_split(char const *s, char c)
 {
@@ -54,12 +64,13 @@ char	**ft_split(char const *s, char c)
 			else
 				len = ft_strchr(s, c) - s;
 			arr[i] = ft_substr(s, 0, len);
+			if (!arr[i])
+				return(free_all(arr), NULL);
 			i++;
 			s = s + len;
 		}
 	}
-	arr[i] = '\0';
-	return (arr);
+	return (arr[i] = '\0', arr);
 }
 /*
 int main(void)
