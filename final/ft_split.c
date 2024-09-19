@@ -6,11 +6,11 @@
 /*   By: silic <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:26:05 by silic             #+#    #+#             */
-/*   Updated: 2024/09/16 15:26:08 by silic            ###   ########.fr       */
+/*   Updated: 2024/09/19 19:17:03 by silic            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 static int	counter(char const *s, char c)
 {
@@ -32,9 +32,11 @@ static int	counter(char const *s, char c)
 	}
 	return (i);
 }
-static void free_all(char **arr)
+
+static void	free_all(char **arr)
 {
 	int	i;
+
 	while (arr[i])
 	{
 		free(arr[i]);
@@ -43,16 +45,12 @@ static void free_all(char **arr)
 	free(arr);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**do_stuff(const char *s, char c, char **arr)
 {
-	char	**arr;
 	size_t	i;
 	size_t	len;
 
 	i = 0;
-	arr = (char **)malloc((counter(s, c) + 1) * sizeof(char *));
-	if (!arr)
-		return (NULL);
 	while (*s)
 	{
 		while (*s == c && *s)
@@ -65,15 +63,25 @@ char	**ft_split(char const *s, char c)
 				len = ft_strchr(s, c) - s;
 			arr[i] = ft_substr(s, 0, len);
 			if (!arr[i])
-				return(free_all(arr), NULL);
+				return (free_all(arr), NULL);
 			i++;
 			s = s + len;
 		}
 	}
-	return (arr[i] = '\0', arr);
+	return (arr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**arr;
+
+	arr = (char **)ft_calloc((counter(s, c) + 1), sizeof(char *));
+	if (!arr)
+		return (NULL);
+	return (do_stuff(s, c, arr));
 }
 /*
-int main(void)
+int	main(void)
 {
 	ft_split("asdafsaadaffa", 'a');
 }*/

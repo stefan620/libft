@@ -10,24 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <bsd/string.h>
-#include <stdlib.h>
 #include "libft.h"
+#include <bsd/string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 	size_t	k;
-	
+
 	k = ft_strlen(dst);
 	i = 0;
 	j = ft_strlen(dst);
 	if (ft_strlen(dst) >= size)
-		return(ft_strlen(src) + size);
+		return (ft_strlen(src) + size);
 	if (size == 0)
 		return (ft_strlen(src));
 	while (src[i] && j != size - 1 && i != size - 1)
@@ -37,13 +36,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		j++;
 	}
 	dst[j] = '\0';
-	return(ft_strlen(src) + k);
-	
-	
-
+	return (ft_strlen(src) + k);
 }
 /*
-int main(void)
+int	main(void)
 {
 
 }*/
