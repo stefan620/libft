@@ -42,7 +42,7 @@ int main(void)
 	char src[] = "coucou";
 	char dest[10]; memset(dest, 'A', 10);
 	printf("%zu", ft_strlcpy(dest, 0, 0));
-	//printf("%zu", strlcpy(dest, 0, 0));
+	printf("%zu", strlcpy(dest, 0, 0));
 	//printf("%s", dest);
 	//puts(dest);
 }*/

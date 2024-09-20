@@ -12,8 +12,8 @@
 
 #include <unistd.h>
 
-void	crate_str(int nb, int fd);
-int		count_nb(int nb);
+static void	crate_str(int nb, int fd);
+static int	count_nb(int nb);
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -21,24 +21,24 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, "0", 1);
 	if (n == -2147483648)
 	{
-		write (fd, "-2147483648", 11);
+		write(fd, "-2147483648", 11);
 	}
 	if (n > 0)
 		crate_str(n, fd);
 	if (n < 0 && n != -2147483648)
 	{
-		write (fd, "-", 1);
+		write(fd, "-", 1);
 		crate_str(n, fd);
 	}
 }
 /*
-int main(void)
+int	main(void)
 {
 	ft_putnbr_fd(-2147483648, 1);
 }
 */
 
-int	count_nb(int nb)
+static int	count_nb(int nb)
 {
 	int	j;
 
@@ -51,7 +51,7 @@ int	count_nb(int nb)
 	return (j);
 }
 
-void	crate_str(int nb, int fd)
+static void	crate_str(int nb, int fd)
 {
 	int		j;
 	int		i;

@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-void	b_zero(void *str, size_t n);
+static void	b_zero(void *str, size_t n);
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
@@ -32,7 +32,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (r);
 }
 
-void	b_zero(void *str, size_t n)
+static void	b_zero(void *str, size_t n)
 {
 	unsigned char	*ptr;
 

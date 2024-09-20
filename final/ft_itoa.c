@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "libft.h"
 
-char	*if_zero(int n);
-char	*min_int(int n);
-char	*if_positive(int n);
-char	*if_negativ(int n);
+static char	*if_zero(int n);
+static char	*min_int(int n);
+static char	*if_positive(int n);
+static char	*if_negativ(int n);
 
 char	*ft_itoa(int n)
 {
@@ -34,7 +34,7 @@ char	*ft_itoa(int n)
 	return (s);
 }
 
-char	*if_positive(int n)
+static char	*if_positive(int n)
 {
 	char	*s;
 	int		a;
@@ -47,7 +47,7 @@ char	*if_positive(int n)
 		a = a / 10;
 		i++;
 	}
-	s = (char *) malloc(i * sizeof(char) + 1);
+	s = (char *)malloc(i * sizeof(char) + 1);
 	if (s == NULL)
 		return (NULL);
 	s[i] = '\0';
@@ -62,7 +62,7 @@ char	*if_positive(int n)
 	return (s);
 }
 
-char	*if_negativ(int n)
+static char	*if_negativ(int n)
 {
 	int		a;
 	char	*s;
@@ -75,7 +75,7 @@ char	*if_negativ(int n)
 		a = a / 10;
 		i++;
 	}
-	s = (char *) malloc(i * sizeof(char) + 2);
+	s = (char *)malloc(i * sizeof(char) + 2);
 	if (s == NULL)
 		return (NULL);
 	*s = '-';
@@ -91,12 +91,12 @@ char	*if_negativ(int n)
 	return (s);
 }
 
-char	*if_zero(int n)
+static char	*if_zero(int n)
 {
 	char	*s;
 
 	n = n * 1;
-	s = (char *) malloc(1 * sizeof(char) + 1);
+	s = (char *)malloc(1 * sizeof(char) + 1);
 	if (s == NULL)
 		return (NULL);
 	s[0] = '0';
@@ -104,7 +104,7 @@ char	*if_zero(int n)
 	return (s);
 }
 
-char	*min_int(int n)
+static char	*min_int(int n)
 {
 	char			*s;
 	int				i;
@@ -118,7 +118,7 @@ char	*min_int(int n)
 		n = n / 10;
 		i++;
 	}
-	s = (char *) malloc(12 * sizeof(char));
+	s = (char *)malloc(12 * sizeof(char));
 	if (s == NULL)
 		return (NULL);
 	*s = '-';
@@ -133,9 +133,9 @@ char	*min_int(int n)
 }
 
 /*
-int main(void)
+int	main(void)
 {
-    int n = -2147483648;
-    printf ("%s", ft_itoa(n));
-    
+	int n = -2147483648;
+	printf ("%s", ft_itoa(n));
+
 }*/

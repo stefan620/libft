@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
@@ -36,13 +33,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
 /*
-int main(void)
+int	main(void)
 {
 	char haystack[30] = "aaabcabcd";
 	char needle[10] = "aabc";
-  	ft_strnstr(haystack, needle, -1)
+	ft_strnstr(haystack, needle, -1)
 	printf("%s", c);
-        return(0); 
+		return(0);
 }*/
