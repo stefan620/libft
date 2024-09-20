@@ -1,45 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi.c                                             :+:      :+:    :+:   */
+/*   memchr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: silic <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/05 16:38:42 by silic             #+#    #+#             */
-/*   Updated: 2024/09/05 16:38:44 by silic            ###   ########.fr       */
+/*   Created: 2024/09/05 15:18:35 by silic             #+#    #+#             */
+/*   Updated: 2024/09/05 15:18:37 by silic            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 
-int	ft_atoi(const char *str)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-	int			a;
-	const char	*min;
+	unsigned char		*s1;
+	unsigned char		*s;
+	size_t				i;
 
-	a = 0;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	min = str;
-	if (*min == '-' || *min == '+')
-		str++;
-	while (*str != '\0' && (*str >= '0' && *str <= '9'))
+	s1 = (unsigned char *)&c;
+	s = (void *)str;
+	i = 0;
+	if (n == 0)
+		return (NULL);
+	while (i < n)
 	{
-		a = a * 10 + (*str - '0');
-		str++;
+		if (s[i] == *s1)
+			return (&s[i]);
+		i++;
 	}
-	if (*min == '-')
-		a = a * -1;
-	return (a);
+	return (NULL);
 }
 /*
-#include <stdlib.h>
+#include <unistd.h>
 #include <stdio.h>
-
-
 int main(void)
 {
-	char a[] = "                          -+1231434";
-	
-	printf("%d \n", ft_atoi(a));
-	printf("%d \n", atoi(a));
-}
-*/
+	char a[12] = "\0www.i.com";
+	int b = '.';
+	char *ret = ft_memchr(a,b,2);
+	printf("%s \n",ret);;
+}*/

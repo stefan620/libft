@@ -28,6 +28,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (*s2++ != '\0')
 		i++;
 	s12 = (char *)malloc(i * sizeof(char) + 1);
+	if (s12 == NULL)
+		return (NULL);
 	ret = s12;
 	while (*counter1 != '\0')
 		*s12++ = *counter1++;

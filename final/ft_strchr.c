@@ -12,23 +12,21 @@
 
 char	*ft_strchr(const char *str, int search_str)
 {
-	int		i;
-	char	*ptr;
+	unsigned char	*ptr;
+	unsigned char	*ptr1;
 
-	i = 0;
-	ptr = (char *)str;
+	ptr1 = (unsigned char *)&search_str;
+	ptr = (unsigned char *)str;
 	while (*ptr != '\0')
 	{
-		if (*ptr == search_str)
+		if (*ptr == *ptr1)
 		{
-			return (ptr);
+			return ((char *)ptr);
 		}
 		ptr++;
 	}
-	if (search_str == 0)
-		return (ptr);
-	if (search_str <= 32 || search_str >= 126)
-		return ((char *)str);
+	if (*ptr1 == 0)
+		return ((char *)ptr);
 	return (0);
 }
 /*
