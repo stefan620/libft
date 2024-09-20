@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iatoi.c                                         :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: silic <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: silic <silic@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 17:47:13 by silic             #+#    #+#             */
-/*   Updated: 2024/09/09 17:47:16 by silic            ###   ########.fr       */
+/*   Updated: 2024/09/20 15:13:25 by silic            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 
 static char	*if_zero(int n);
-static char	*min_int(int n);
+static char	*min_int(unsigned int n);
 static char	*if_positive(int n);
 static char	*if_negativ(int n);
 
@@ -104,7 +104,7 @@ static char	*if_zero(int n)
 	return (s);
 }
 
-static char	*min_int(int n)
+static char	*min_int(unsigned int n)
 {
 	char			*s;
 	int				i;

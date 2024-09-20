@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: silic <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: silic <silic@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:26:05 by silic             #+#    #+#             */
-/*   Updated: 2024/09/19 19:17:03 by silic            ###   ########.fr       */
+/*   Updated: 2024/09/20 15:31:27 by silic            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
@@ -37,6 +38,7 @@ static void	free_all(char **arr)
 {
 	int	i;
 
+	i = 0;
 	while (arr[i])
 	{
 		free(arr[i]);
