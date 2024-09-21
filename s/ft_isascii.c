@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <ctype.h>
-
 int	ft_isascii(int arg)
 {
 	if (arg >= 0 && arg <= 127)

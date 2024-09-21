@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdint.h>
 
 static void	b_zero(void *str, size_t n);
 

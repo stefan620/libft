@@ -9,7 +9,7 @@
 /*   Updated: 2024/09/02 16:49:58 by silic            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+#include <stdlib.h>
 
 void	*ft_memset(void *str, int c, size_t n)
 {

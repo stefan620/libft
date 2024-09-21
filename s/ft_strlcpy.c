@@ -9,7 +9,7 @@
 /*   Updated: 2024/09/06 18:48:41 by silic            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include <stdlib.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

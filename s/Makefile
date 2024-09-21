@@ -4,7 +4,7 @@ SOURCES = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isascii.c ft_isdigit.
 					
 OBJECTS = $(SOURCES:.c=.o)
 
-BONUS =	ft_lstnew_bonus.c ft_lstaddfront_bonus.c ft_lstsize_bonus.c  ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c
+BONUS =	ft_lstnew_bonus.c ft_lstaddfront_bonus.c ft_lstsize_bonus.c  ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c
 
 
 BONUS_OBJECTS = $(BONUS:.c=.o)

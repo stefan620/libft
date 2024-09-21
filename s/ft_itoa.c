@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 static char	*if_zero(int n);

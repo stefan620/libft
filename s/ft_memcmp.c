@@ -9,7 +9,7 @@
 /*   Updated: 2024/09/05 15:54:06 by silic            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include <stdlib.h>
 
 int	ft_memcmp(const char *str1, const char *str2, size_t n)
 {
