@@ -43,12 +43,12 @@ To compile and use the library, you need:
    cd libft
 
 ### Functions Implemented
-Part 1 - Libc Functions
+## Part 1 - Libc Functions
 
-    | **Function**       | **Description**                                          |
-|---------------------|----------------------------------------------------------|
-| `ft_memset`         | Fills memory with a constant byte.                       |
-| `ft_bzero`          | Zeros out a block of memory.                             |
+| **Function**        | **Description**                                         |
+|---------------------|---------------------------------------------------------|
+| `ft_memset`         | Fills memory with a constant byte.                      |
+| `ft_bzero`          | Zeros out a block of memory.                            |
 | `ft_memcpy`         | Copies memory area.                                     |
 | `ft_memccpy`        | Copies memory until a specific character is found.      |
 | `ft_memmove`        | Copies memory safely (handles overlapping areas).       |
