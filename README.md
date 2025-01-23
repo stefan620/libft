@@ -42,8 +42,8 @@ To compile and use the library, you need:
    git clone https://github.com/<your-username>/libft.git
    cd libft
 
-### Functions Implemented
-## Part 1 - Libc Functions
+## Functions Implemented
+### Part 1 - Libc Functions
 
 | **Function**        | **Description**                                         |
 |---------------------|---------------------------------------------------------|
@@ -72,7 +72,7 @@ To compile and use the library, you need:
 | `ft_calloc`         | Allocates and clears memory.                            |
 | `ft_strdup`         | Duplicates a string.                                    |
 
-Part 2 - Additional Functions
+### Part 2 - Additional Functions
    
 | **Function**       | **Description**                                          |
 |---------------------|----------------------------------------------------------|
@@ -87,7 +87,7 @@ Part 2 - Additional Functions
 | `ft_putendl_fd`     | Writes a string followed by a newline to a file descriptor.|
 | `ft_putnbr_fd`      | Writes an integer to a file descriptor.                 |
 
-Bonus - Linked List Functions
+### Bonus - Linked List Functions
 
 | **Function**       | **Description**                                          |
 |---------------------|----------------------------------------------------------|
