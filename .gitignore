@@ -7,6 +7,7 @@
 # Ignore object files
 *.o
 *.obj
+*.a
 
 # Ignore debugging and profiling files
 *.d
