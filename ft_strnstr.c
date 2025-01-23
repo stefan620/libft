@@ -10,47 +10,35 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
-char    *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-    int i;
-    int j;
-	//const char *s = big;
+	size_t	i;
+	size_t	j;
 
-    i = 0;
-    if (ft_strlen((char *)little) <= 0)
-        return ((char *)big);
-    if (len > ft_strlen((char *)big))
-    	return (0);
-    while(big[i] != '\0'  && len != 0)
-    {
-        j = 0;
-        while (big[i] == little[j] || little[i])
-        {
-        
-           if(little[j] == '\0')
-                return((char *)&big[i - j]);
-            j++;
-            i++;
-            len--;
-           
-        }
-        i++;
-        len--;
-    }
-    return(NULL);
-
+	i = 0;
+	if (ft_strlen((char *)little) == 0)
+		return ((char *)big);
+	while (big[i] && i < len)
+	{
+		j = 0;
+		while (little[j] == big[i + j] && i + j < len)
+		{
+			j++;
+			if (little[j] == '\0')
+				return ((char *)&big[i]);
+		}
+		i++;
+	}
+	return (NULL);
 }
 /*
-int main(void)
+int	main(void)
 {
-    char a[30] = "aaabcabcd";
-    char b[10] = "aabc";
-    char *c = ft_strnstr(a, b, 5);
-    printf("%s", c);
-    return(0); 
+	char haystack[30] = "aaabcabcd";
+	char needle[10] = "aabc";
+	ft_strnstr(haystack, needle, -1)
+	printf("%s", c);
+		return(0);
 }*/

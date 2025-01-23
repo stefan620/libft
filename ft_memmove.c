@@ -10,27 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char *dptr = dest;
-	const unsigned char *sptr = src;
+	unsigned char		*dptr;
+	const unsigned char	*sptr;
 
+	sptr = src;
+	dptr = dest;
 	if (!dest && !src)
-		return(dest);
-	  if (src < dest)
-        while (n--)
-            dptr[n] = sptr[n];
-    else 
-        while (n--)
-            *dptr++ = *sptr++;
-    return (dest);
+		return (dest);
+	if (src < dest)
+		while (n--)
+			dptr[n] = sptr[n];
+	else
+		while (n--)
+			*dptr++ = *sptr++;
+	return (dest);
 }
 /*
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
 int main (void)
 {
 	char src[100] = "Learningisfun";

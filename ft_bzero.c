@@ -9,15 +9,17 @@
 /*   Updated: 2024/09/03 14:35:09 by silic            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void    ft_bzero(void *str, size_t n)
+#include <stdlib.h>
+
+void	ft_bzero(void *str, size_t n)
 {
-    unsigned char   *ptr;
-    ptr = (unsigned char *)str;
-    
-    while(n-- > 0)
-    {
-        *ptr++ = '0';
-    }
+	unsigned char	*ptr;
+
+	ptr = (unsigned char *)str;
+	while (n-- > 0)
+	{
+		*ptr++ = '\0';
+	}
 }
 /*
 #include <stdio.h>
